@@ -16,7 +16,10 @@ let package = Package(
     targets: [
         .target(
             name: "TMTumblrSDK",
-            path: "Classes"
+            path: "Classes",
+            cSettings: [
+                .define("NS_BLOCK_ASSERTIONS", to: "1", .when(configuration: .release))
+            ]
         ),
         .testTarget(
             name: "TMTumblrSDKTests",
